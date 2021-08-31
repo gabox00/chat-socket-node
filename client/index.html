@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Chat con Socket.io y NodeJS</title>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="./main.js"></script>
+
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                background: #181818;
+            }
+            h1{
+                text-align: center;
+                width: 100%;
+                color: #eee;
+            }
+            #messages{
+                background: #303030;
+                border-radius: 5px;
+                border: 1px solid #eee;
+                height: 550px;
+                max-height: 1000px;
+                max-width: 1000px;
+                padding: 10px;
+                overflow-y: scroll;
+                width: 100%;
+            }
+            .message{
+                margin: 0 20px 20px 20px;
+                padding: 5px;
+                border-radius: 5px;
+                background: #eee;
+                overflow-x: hidden;
+            }
+            strong{
+                color: #eee;
+                margin-left: 20px;
+                line-height: 40px;
+            }
+            #formulario{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            #nickname{
+                border-radius: 2px;
+                padding: 8px;
+                width: 80px;
+            }
+            #text{
+                border-radius: 2px;
+                padding: 8px;
+            }
+            .send{
+                padding: 8px;
+                border-radius: 10px;
+                background: coral;
+                color: #eee;
+            }
+            .send:hover{
+                background: #f05f2a;
+                transition: 1s;
+            }
+            ::-webkit-scrollbar {display: none;}
+        </style>
+    </head>
+    <body>
+        <h1>Chat con Socket.io y NodeJS</h1>
+        <div id="messages"></div>
+        <div id="formulario">
+            <form onsubmit="return addMessage(this)">
+                <input id="nickname" type="text" placeholder="Nick"/>
+                <input id="text" type="text" placeholder="Texto" required/>
+                <input class="send" type="submit" value="Enviar">
+            </form>
+        </div>
+
+    </body>
+</html>
